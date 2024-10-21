@@ -1,47 +1,35 @@
-# TripleTen Sprint 2 Project - EDA
+### Shopper Insights: Investigating Customer Behavior and Grocery Delivery Trends with Instacart Data
 
-This is the 2nd project I worked on in the TripleTen Data Science program. This project was the most independent project I've worked on so far, and I loved it.
+### Overview
+This project delves into the grocery delivery dataset from Instacart, with a focus on analyzing customer shopping habits. The primary aim is to investigate patterns and trends in grocery purchases to provide valuable insights.
 
-### Instacart Orders
+### Questions/Commands
+- **What does this project do?**
+    - Cleans the dataset to handle missing and duplicate values.
+    - Analyzes customer shopping patterns to uncover trends.
+    - Identifies and removes outliers to ensure data accuracy.
+    - Creates visualizations to present the findings clearly.
 
-The goal of the project was to clean the data and prepare a report that gives insight into the shopping habits of Instacart customers, including plot to help communicate the results.
+### Prerequisites
+- Access to the required dataset.
+- Basic understanding of data manipulation and analysis in Python.
 
-#### The Data
+### Functionality
+- **Cleaning**: Handles missing and duplicate values to ensure dataset integrity.
+- **Pattern Analysis**: Examines customer shopping habits for trend identification.
+- **Outlier Detection**: Identifies and removes anomalies to improve result accuracy.
+- **Visualization**: Generates plots to communicate findings, with titles, labeled axes, and legends.
 
-The data was spread across five files:
+### Technologies
+To build this project, the following tools and technologies were utilized:
+- **Python**
+- **Pandas**
+- **Jupyter Notebook for interactive analysis**
 
-- `instacart_orders.csv`: each row corresponds to one order on the Instacart app
-    - `'order_id'`: ID number that uniquely identifies each order
-    - `'user_id'`: ID number that uniquely identifies each customer account
-    - `'order_number'`: the number of times this customer has placed an order
-    - `'order_dow'`: day of the week that the order placed (which day is 0 is uncertain)
-    - `'order_hour_of_day'`: hour of the day that the order was placed
-    - `'days_since_prior_order'`: number of days since this customer placed their previous order
-- `products.csv`: each row corresponds to a unique product that customers can buy
-    - `'product_id'`: ID number that uniquely identifies each product
-    - `'product_name'`: name of the product
-    - `'aisle_id'`: ID number that uniquely identifies each grocery aisle category
-    - `'department_id'`: ID number that uniquely identifies each grocery department category
-- `order_products.csv`: each row corresponds to one item placed in an order
-    - `'order_id'`: ID number that uniquely identifies each order
-    - `'product_id'`: ID number that uniquely identifies each product
-    - `'add_to_cart_order'`: the sequential order in which each item was placed in the cart
-    - `'reordered'`: 0 if the customer has never ordered this product before, 1 if they have
-- `aisles.csv`
-    - `'aisle_id'`: ID number that uniquely identifies each grocery aisle category
-    - `'aisle'`: name of the aisle
-- `departments.csv`
-    - `'department_id'`: ID number that uniquely identifies each grocery department category
-    - `'department'`: name of the department
-
-The data is provided by TripleTen, who took it from Kaggle and modified it.
-
-#### The Process
-
-I first explored the dataset to find and fix missing and duplicate values, and I merged DataFrames from different sources. Finally, I analyzed the data using visualizations and pivot tables.
-
-### Results
-
-Taking the time to explain my results at each step was a key element in this process, and this was my first attempt at doing it. I wrote an introduction and conclusion that outlined what I did, and made suggestions for Instacart to consider in the future.
-
-Please have a look at the Jupyter Notebook included for a full description of results.
+#### Installing
+Clone the repository and install the required dependencies to run the analysis on your local machine:
+```bash
+git clone [repo link]
+cd [repo name]
+pip install -r requirements.txt
+jupyter notebook
