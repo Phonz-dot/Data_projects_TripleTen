@@ -1,39 +1,45 @@
-### SmartSwitch: Optimizing Plan Recommendations for Megaline Subscribers
+# Megaline Subscriber Behavior Analysis
 
-#### Overview
-This project delves into the mobile carrier Megaline's subscriber behavior data, aiming to recommend the optimal plan (Smart or Ultra) for each user. By analyzing data on calls, messages, internet usage, and current plans, the goal is to develop a model that accurately predicts the best plan for subscribers. With a focus on achieving high accuracy, this project involves data preprocessing, model development, and evaluation using a test dataset, ultimately enhancing customer satisfaction and optimizing plan recommendations.
+## Overview
+This project aims to develop a classification model to analyze subscriber behavior and recommend the most suitable plan (Smart or Ultra) for Megaline's customers. The goal is to achieve an accuracy score above 0.75 by evaluating three machine learning models: Decision Tree, Random Forest, and Logistic Regression. The Random Forest model performed best with an accuracy of 0.81, meeting the business objective. The analysis was conducted using Python with libraries like pandas, scikit-learn, and GridSearchCV for hyperparameter tuning.
 
-#### Questions/Commands
-- **What does this project do?**
-  - Identifies and removes inconsistent or unusual data entries to enhance result accuracy.
-  - Trains, fine-tunes, and evaluates different models to recommend the optimal plan with the highest accuracy.
-  - Checks the model’s accuracy using the test dataset, aiming for a threshold of 0.75.
-  - Performs a final validation of the ideal model to ensure robust and reliable findings.
+## Problem(s) to be addressed
+- **Legacy Plan Usage**: Many Megaline subscribers are still on outdated plans, and the company wants to migrate them to newer plans (Smart or Ultra) based on their usage behavior.
+- **Model Accuracy**: The model must accurately classify subscribers into the correct plan with an accuracy threshold of 0.75 or higher.
+- **Behavioral Insights**: Understanding how call duration, text messages, and data usage influence plan choice can help tailor marketing strategies and improve customer satisfaction.
 
-#### Prerequisites
-- Access to the required dataset.
-- Basic understanding of data manipulation, analysis (EDA/SDA) & model creation in Python.
+## Key Features
+- **Data Preprocessing**: The dataset was checked for missing values and duplicates, ensuring clean and reliable data for modeling.
+- **Model Development**: Three classification models were trained and evaluated:
+  - **Decision Tree**: Achieved an accuracy of 0.80 after hyperparameter tuning.
+  - **Random Forest**: Performed best with an accuracy of 0.81.
+  - **Logistic Regression**: Reached an accuracy of 0.74, below the target threshold.
+- **Hyperparameter Tuning**: GridSearchCV was used to optimize model parameters, improving accuracy.
+- **Sanity Check**: The Random Forest model was validated against a baseline DummyClassifier, confirming its reliability.
 
-#### Functionality
+## Prerequisites
+To run this project, you'll need:
+- **Python 3.7+**
+- **Jupyter Notebook**
 
-- **Data Cleaning**: Cleans and organizes subscriber behavior data, including calls, messages, internet usage, and current plans, to ensure it's ready for analysis.
-- **Model Training**: Develops a classification model to recommend the optimal plan (Smart or Ultra) by training it on the cleaned dataset.
-- **Model Tuning**: Fine-tunes the model by adjusting hyperparameters and testing different algorithms to achieve the highest accuracy.
-- **Model Evaluation**: Evaluates the model's performance using a test dataset, aiming for an accuracy threshold of 0.75, and performs a sanity check to validate the results.
+## Key Findings
+- **Best Model**: 
+  - The Random Forest classifier with max_depth=10 and n_estimators=100 achieved the highest accuracy (0.81) on the test set.
+- **Feature Importance**: 
+  - The model identified call duration (minutes) and data usage (mb_used) as significant predictors for plan recommendation.
+- **Validation**: 
+  - The model's performance was consistent across training, validation, and test sets, indicating no overfitting or underfitting.
 
-#### Technologies
-To build this project, the following tools and technologies were utilized:
-- **Python**
-- **Pandas**
-- **SKLearn**
-- **Jupyter Notebook** for interactive analysis
+## Further Improvements
+- **Feature Engineering**: 
+  - Explore creating new features (e.g., call-to-text ratio) to improve model accuracy.
+- **Model Explainability**: 
+  - Use SHAP or LIME to interpret the model's decisions and provide transparent recommendations to subscribers.
+- **Real-Time Deployment**: 
+  - Integrate the model into Megaline's customer portal for real-time plan recommendations.
+- **Scalability Testing**: 
+  - Evaluate the model's performance on larger datasets or additional features (e.g., customer demographics).
 
-#### Installing
-Clone the repository and install the required dependencies to run the analysis on your local machine:
-```bash
-git clone [repo link]
-cd [repo name]
-pip install -r requirements.txt
-jupyter notebook
-
-
+- **Libraries**:
+  ```bash
+  pip install pandas numpy scikit-learn plotly
