@@ -1,45 +1,59 @@
-### Churn Prediction: Retention Strategies for Beta Bank
+# Beta Bank Customer Churn Prediction  
 
-#### Overview
-This project delves into the banking industry, focusing on Beta Bank's efforts to prevent customer churn. The primary aim is to analyze customer behavior and predict whether a client is likely to leave the bank. By building a highly accurate model, the goal is to enhance customer retention strategies and reduce churn rates, ensuring long-term customer loyalty and satisfaction.
+## Overview  
+This project aims to predict customer churn for Beta Bank using historical client behavior and contract termination data. The goal is to build a classification model that can identify customers likely to leave the bank soon, allowing the bank to implement retention strategies. The project involves data preprocessing, exploratory analysis, handling class imbalance, and evaluating multiple machine learning models (Decision Tree, Random Forest, and Logistic Regression) to achieve the best F1 score (target: ≥0.59). The final Logistic Regression model achieved satisfactory performance, with additional evaluation using AUC-ROC metrics.  
 
-#### Questions/Commands
-- **What does this project do?**
-- Filters the dataset to include only customer behavior data and termination of contracts with the bank.
-  - Examines the balance of classes to understand the distribution of customers who left and those who stayed.
-  - Identifies and applies at least two methods to address class imbalance, such as SMOTE or class weighting.
-  - Develops a classification model with the goal of maximizing the F1 score to predict customer churn.
-  - Measures and compares the AUC-ROC metric alongside the F1 score to evaluate model performance and ensure robust and reliable predictions.
-    
-#### Prerequisites
-- Access to the required dataset: /datasets/Churn.csv file containing customer behavior data and termination of contracts.
-- Basic understanding of data manipulation and analysis in Python.
-- Familiarity with machine learning libraries such as Scikit-learn.
-- Knowledge of classification algorithms and techniques.
-- Experience with handling class imbalance in datasets.
-- Understanding of evaluation metrics like F1 score and AUC-ROC.
+## Problem(s) to be addressed  
+- **Customer Retention**: Predicting churn helps Beta Bank retain customers more cost-effectively than acquiring new ones.  
+- **Class Imbalance**: The dataset is highly imbalanced (20% churn vs. 80% non-churn), requiring techniques like upsampling to improve model performance.  
+- **Model Selection**: Comparing multiple classifiers (Decision Tree, Random Forest, Logistic Regression) to identify the best-performing model based on F1 score and AUC-ROC metrics.  
 
-#### Functionality
-- **Data Preparation**: Gathers and prepares the customer behavior dataset for thorough analysis.
-- **Class Balance Review**: Reviews the class balance to assess the distribution of customers who left versus those who stayed.
-- **Initial Model Training**: Trains the initial model without addressing class imbalance to set a performance benchmark.
-- **Addressing Class Imbalance**: Implements at least two methods to tackle class imbalance, such as resampling techniques or modifying class weights.
-- **Model Optimization and Evaluation**: Trains and fine-tunes various models on training and validation sets, selecting the most accurate one.
-- **Performance Metrics Assessment**: Calculates and compares the F1 score and AUC-ROC metric to evaluate and validate the model's effectiveness.
+## Key Features  
+- **Data Preprocessing**:  
+  - Handled missing values in the `Tenure` column.  
+  - Dropped irrelevant columns (`RowNumber`, `CustomerId`, `Surname`).  
+  - Encoded categorical variables (`Geography`, `Gender`) using One-Hot Encoding.  
+  - Scaled numeric features using `StandardScaler`.  
+- **Class Imbalance Fix**: Applied upsampling to balance the target variable (`Exited`).  
+- **Model Training & Evaluation**:  
+  - Trained and tuned Decision Tree, Random Forest, and Logistic Regression models.  
+  - Evaluated models using F1 score, precision, recall, and AUC-ROC metrics.  
+  - Selected Logistic Regression as the best model (F1 > 0.59 on the test set).  
 
-#### Technologies
-To build this project, the following tools and technologies were utilized:
-- **Python** for data manipulation and model building.
-- **Pandas** for efficient data handling and analysis.
-- **NumPy** for numerical operations and data processing.
-- **Scikit-learn** for implementing machine learning algorithms and evaluation metrics.
-- **Matplotlib** and **Seaborn** for data visualization and exploratory analysis.
-- **Jupyter Notebook** for interactive and iterative development.
+## Prerequisites  
+To run this project, you'll need:  
+- **Python 3.7+**  
+- **Jupyter Notebook** 
 
-#### Installing
-Clone the repository and install the required dependencies to run the analysis on your local machine:
-```bash
-git clone [repo link]
-cd [repo name]
-pip install -r requirements.txt
-jupyter notebook
+## Key Findings
+- **Data Insights**:
+  - The dataset had 909 missing values in the `Tenure` column, which were dropped
+  - The target variable (`Exited`) was highly imbalanced (20.4% churn vs. 79.6% non-churn)
+  
+- **Model Performance**:
+  - **Logistic Regression**:
+    - Achieved the highest F1 score (>0.59)
+    - Demonstrated strong AUC-ROC performance
+  - **Decision Tree & Random Forest**:
+    - Underperformed in F1 score despite hyperparameter tuning
+    - Showed low recall on the validation set
+
+## Further Improvements
+- **Feature Engineering**:
+  - Create interaction terms (e.g., `Age × Balance`)
+  - Develop tenure-based customer segments
+  - Add time-based features from historical data
+
+- **Model Enhancements**:
+  - Experiment with gradient boosting methods (XGBoost, LightGBM)
+  - Implement stacked ensemble models
+  - Test neural network approaches
+
+- **Deployment Optimization**:
+  - Build API for real-time churn prediction
+  - Integrate with CRM for automated retention campaigns
+  - Implement monitoring for model drift
+
+- **Libraries**:  
+  ```bash  
+  pip install pandas numpy matplotlib scikit-learn  
