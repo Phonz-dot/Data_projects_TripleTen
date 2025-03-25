@@ -1,54 +1,50 @@
-# TripleTen Sprint 3 Project - Statistical Data Analysis(SDA)
+# Megaline Telecom Plan Revenue Analysis
 
-This is the 3rd project I worked on in the TripleTen Data Science program. This project was an independent project, which was reviewed by officials of the program.
+## Overview
+This project analyzes the revenue performance of Megaline's two prepaid plans, Surf and Ultimate, using data from 500 customers in 2018. The goal is to determine which plan generates more revenue by examining user behavior, including call duration, text messages, and internet usage. Key findings include revenue comparisons, usage patterns, and statistical hypotheses testing. The analysis is conducted using Python with pandas, numpy, and matplotlib for data visualization.
 
-### Megaline Phone Plans
+## Problem(s) to be addressed
+- **Revenue Comparison**: The commercial department needs insights into which plan (Surf or Ultimate) generates higher revenue to optimize the advertising budget.
+- **User Behavior Analysis**: Understanding how customers use their plans (e.g., call minutes, texts, data consumption) helps identify trends and potential areas for plan adjustments.
+- **Data Quality**: The dataset requires cleaning and preprocessing, including handling missing values and converting data types for accurate analysis.
 
-The goal of this project was to preprocess & analyze the data in order to conduct a hypothesis test that gave insight into clients' behavior and determine which prepaid plan brought in more revenue.
+## Key Features
+- **Data Cleaning and Preparation**:
+  - Handles missing values in the `churn_date` field.
+  - Converts date fields (`reg_date`, `call_date`, etc.) to datetime format.
+  - Rounds call durations and data usage according to Megaline's policies.
+- **Exploratory Analysis**:
+  - Compares average call duration, text messages, and internet usage between plans.
+  - Analyzes monthly revenue trends for Surf and Ultimate users.
+- **Statistical Testing**:
+  - Tests hypotheses about revenue differences between plans and regions (e.g., NY-NJ area vs. others).
+- **Visualizations**:
+  - Includes bar charts, histograms, and boxplots to illustrate usage patterns and revenue distribution.
 
-#### The Data
+## Prerequisites
+To run this project, you'll need:
+- **Python 3.7+**
+- **Jupyter Notebook**
 
-The data was spread across five files:
+## Key Findings
+**Revenue**:
+- Ultimate users generate higher average monthly revenue (72.25) compared to Surf users (60.42).
+- Surf users exhibit higher variance in revenue, indicating more variability in their usage and costs.
+**Usage Patterns**:
+- Surf users frequently exceed plan limits, leading to additional charges.
+- Ultimate users generally stay within plan limits due to higher allowances.
+**Statistical Insights**:
+- The null hypothesis that average revenue between plans is equal was rejected, confirming a significant difference.
+- No significant revenue difference was found between users in the NY-NJ area and other regions.
 
-- `megaline_calls.csv`: table focused on calls made (each row held this information for each user)
-    - `'id'`: ID number that uniquely identifies each call
-    - `'user_id'`: ID number that uniquely identifies each user making the call
-    - `'call_date'`: date that the call was made
-    - `'duration'`: duration of the call (in minutes)
-- `megaline_internet.csv`: table focused on web sessions/web traffic (each row held the monthly amount of mb used for each user)
-    - `'id'`: ID number that uniquely identifies each web session
-    - `'user_id'`: ID number that uniquely identifies the user of data/web usage
-    - `'mb_used'`: volume of data spent during the month (in megabytes)
-    - `'session_date'`: monthly web session date
-- `megaline_messages.csv`: table focused on number of text messages sent per month (each row held the monthly number of texts made by each user)
-    - `'id'`: ID number that uniquely identifies each text
-    - `'user_id'`: ID number that uniquely identifies the user sending the text
-    - `'message_date'`: the date of the text message
-- `megaline_plans.csv`: table focused on both plan offered by Megaline
-    - `'plan_name'`: name of phone plan
-    - `'usd_monthly_fee'`: monthly charge in US dollars
-    - `'minutes_included'`: monthly minute allowance
-    - `'messages_included'`: monthly text allowance
-    - `'mb_per_month_included'`: data volume allowance (in megabytes)
-    - `'usd_per_minute'`: price per minute after exceeding the package limits (e.g., if the package includes 100 minutes, the 101st minute will be charged)
-    - `'usd_per_message'`: price per text after exceeding the package limits
-    - `'usd_per_gb'`: price per extra gigabyte of data after exceeding the package limits (1 GB = 1024 megabytes)
-- `megaline_users.csv`: table focused on information related to users
-    - `'user_id'`: ID number that uniquely identifies each user
-    - `'first_name'`: user's name
-    - `'last_name'`: user's last name
-    - `'age'` — user's age (years)
-    - `'reg_date'`: subscription date (dd, mm, yy)
-    - `'churn_date'`: the date the user stopped using the service (if the value is missing, the calling plan was being used when this database was extracted)
-    - `'city'`: user's city of residence
-    - `'plan'`: calling plan name
+## Further Improvements
+**Seasonal Analysis**: 
+- Investigate how revenue and usage vary by season (e.g., holiday months).
+**Customer Segmentation**: 
+- Cluster users by usage behavior (e.g., heavy callers, frequent texters) to tailor marketing strategies.
+**Predictive Modeling**: 
+- Use historical data to predict future revenue trends or customer churn.
 
-#### The Process
-
-I started by examining each dataset, addressing missing and duplicate values, and converting columns to the correct data types. I then aggregated tables to identify patterns in client behavior, which I visualized. Finally, I conducted statistical tests to compare the average revenue between the Ultimate and Surf plans and to determine if the NY-NJ area differed from other regions.
-
-### Results
-
-Taking the time to explain my results at each step was a key element in this process. I wrote an introduction and conclusion that outlined what I did, and gave Megaline more insight into their plans.
-
-Please have a look at the Jupyter Notebook included for a full description of results.
+**Libraries**:
+  ```bash
+  pip install pandas numpy matplotlib scipy
