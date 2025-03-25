@@ -1,41 +1,39 @@
-### Zuber Insights: Uncovering passenger preferences and the impact of external factors on ride-sharing in Chicago through comprehensive data analysis and hypothesis testing.
+# Zuber Ride-Sharing Analysis: Chicago Passenger Preferences
 
-#### Overview
-This project delves into the ride-sharing industry, focusing on Zuber, a new company launching in Chicago. The primary aim is to identify patterns in passenger preferences and assess the impact of external factors on rides. By analyzing a comprehensive dataset, including taxi rides, weather conditions, and neighborhood information, the goal is to understand and predict ride-sharing dynamics, ultimately aiding in strategic decision-making and campaign planning.
+## Overview
+This project analyzes taxi ride data in Chicago to uncover passenger preferences and the impact of external factors (e.g., weather) on ride patterns for Zuber, a new ride-sharing company. The goal is to identify trends in ride frequency, popular neighborhoods, and the effect of weather conditions on ride durations. The analysis involves SQL data processing, exploratory data analysis (EDA), and statistical hypothesis testing using Python with pandas, numpy, and Plotly for visualizations.
 
-#### Questions/Commands
-- **What does this project do?**
-  - Gathers necessary data from weather websites for detailed weather analysis.
-  - Conducts initial analysis on raw data in the database to determine which slices meet project criteria.
-  - Cleans and organizes the data to ensure it's ready for analysis.
-  - Performs an initial analysis to understand data distribution and identify key trends.
-  - Formulates and tests hypotheses to validate relationships between variables, focusing on the impact of weather on ride frequency and duration.
+## Problem(s) to be addressed
+- **Competitor Insights**: Analyze competitor data (e.g., top taxi companies, busy neighborhoods) to inform Zuber’s market strategy.
+- **Weather Impact**: Test whether rainy weather affects ride durations, which could influence pricing and driver allocation.
+- **Data Gaps**: Link disjointed datasets (e.g., `trips` and `weather_records`) using timestamps to enable cross-factor analysis.
 
- #### Prerequisites
-- Access to the required dataset.
-- Basic understanding of data preprocessing and analysis (EDA/SDA) in Python.
-- Basic understanding of data retrieval using SQL.
+## Key Features
+- **SQL Data Processing**: Extracts and aggregates data from multiple tables (`trips`, `cabs`, `neighborhoods`, `weather_records`).
+- **Exploratory Analysis**:
+  - Identifies top neighborhoods for drop-offs (e.g., The Loop, River North).
+  - Ranks taxi companies by ride volume (e.g., Flash Cab leads with 19,558 trips).
+- **Hypothesis Testing**: Uses a t-test to confirm that rainy Saturdays significantly increase ride durations to O’Hare International Airport (p-value < 0.05).
+- **Visualizations**: Includes interactive bar charts (Plotly) to compare ride volumes by company and neighborhood.
 
-#### Functionality
-- **Website Parsing**: Extracts necessary weather data for the analysis.
-- **Database Processing**: Conducts initial SQL analysis to filter and prepare relevant raw data.
-- **Data Cleaning**: Cleans and organizes data to ensure accuracy and consistency.
-- **Trend Analysis**: Performs exploratory data analysis to uncover key trends and patterns.
-- **Hypothesis Testing**: Tests hypotheses to evaluate the impact of weather on ride-sharing dynamics, ensuring reliable results.
+## Prerequisites
+To replicate this analysis, you’ll need:
+- **Python 3.7+**
+- **Jupyter Notebook**
 
-#### Technologies
-To build this project, the following tools and technologies were utilized:
-- **Python**
-- **Pandas**
-- **SciPy**
-- **Plotly**
-- **SQL**
-- **Jupyter Notebook** for interactive analysis
+## Key Findings
+- **Top Neighborhoods**: 
+  - The Loop has the highest average drop-offs (10,727 rides), followed by River North (9,524 rides).
+- **Top Taxi Companies**: 
+  - Flash Cab dominates with 19,558 trips, nearly double its closest competitor.
+- **Weather Impact**: 
+  - Rainy Saturdays increase ride durations to O’Hare by an average of 20% (p-value: 6.52e-12), likely due to traffic or slower driving.
 
-#### Installing
-Clone the repository and install the required dependencies to run the analysis on your local machine:
-```bash
-git clone [repo link]
-cd [repo name]
-pip install -r requirements.txt
-jupyter notebook
+## Further Improvements
+- **Dynamic Pricing Model**: Integrate weather data to adjust pricing during peak demand (e.g., rainy weekends).
+- **Driver Incentives**: Use neighborhood demand patterns to optimize driver placement and bonuses.
+- **Extended Weather Analysis**: Investigate other weather conditions (e.g., snow, fog) and their impact on ride frequency.
+
+## Python Libraries:
+  ```bash
+  pip install pandas numpy scipy plotly
