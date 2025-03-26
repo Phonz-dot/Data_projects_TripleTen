@@ -1,28 +1,26 @@
-# Movie Review Classification System  
+# Movie Review Classification System
 
-## Overview  
-This project develops an automated system for classifying movie reviews as positive or negative, designed for the Film Junky Union community. The system analyzes IMDB movie reviews using natural language processing (NLP) techniques and machine learning models to detect sentiment with high accuracy. The final model achieves an F1 score exceeding 0.85, meeting the project requirements.  
+## Overview
+This project develops a system for the Film Junky Union to automatically classify movie reviews as positive or negative. Using a dataset of IMDB reviews with polarity labels, the goal is to train a model that achieves an F1 score of at least 0.85. The project involves data preprocessing, exploratory analysis, and evaluating multiple models (including Logistic Regression and LightGBM) with TF-IDF vectorization. Key findings highlight model performance and insights into review sentiment distribution.
 
-## Key Features  
-- Classifies movie reviews as positive or negative with high accuracy  
-- Implements multiple NLP preprocessing techniques (NLTK and spaCy)  
-- Tests various machine learning models (Logistic Regression, LGBMClassifier)  
-- Includes comprehensive evaluation metrics (F1 score, ROC AUC, accuracy)  
-- Demonstrates performance on custom review examples  
+## Problem(s) to be addressed
+- **Sentiment Classification**: Automatically detect negative reviews to help the Film Junky Union filter and categorize user-generated content.
+- **Model Performance**: Ensure the model meets the minimum F1 score requirement of 0.85 for reliable classification.
+- **Data Imbalance**: Address potential class imbalances in the dataset to avoid biased predictions.
 
-## Prerequisites  
-To run this project, you'll need:  
-- Python 3.7+  
-- Jupyter Notebook  
-- The following Python libraries:  
-  - pandas  
-  - numpy  
-  - matplotlib  
-  - seaborn  
-  - scikit-learn  
-  - nltk  
-  - spacy  
-  - lightgbm
+## Key Features
+- **Data Preprocessing**: Cleans and normalizes text data by removing punctuation, converting to lowercase, and lemmatizing words.
+- **Exploratory Data Analysis (EDA)**: Investigates:
+  - Distribution of positive and negative reviews.
+  - Trends in review counts over time.
+  - Class balance in the dataset.
+- **Model Evaluation**: Compares multiple models (Logistic Regression with NLTK/spaCy, LightGBM) using metrics like F1 score, accuracy, and ROC AUC.
+- **Custom Review Testing**: Includes a demo to classify user-provided reviews using the trained models.
+
+## Prerequisites
+To run this project, you'll need:
+- **Python 3.7+**
+- **Jupyter Notebook**
 
 ## Key Findings
 - The dataset was well-balanced between positive (49.9%) and negative (50.1%) reviews
@@ -32,6 +30,12 @@ To run this project, you'll need:
   - Test F1 Score: 0.88
   - ROC AUC: 0.95
 
-Install the required packages using:  
-```bash  
-pip install pandas numpy matplotlib seaborn scikit-learn nltk spacy lightgbm  
+## Further Improvements
+- **Hyperparameter Tuning**: Optimize model parameters (e.g., regularization for Logistic Regression, tree depth for LightGBM) to improve performance.
+- **Advanced Text Features**: Experiment with word embeddings (e.g., Word2Vec, GloVe) or transformer-based models (e.g., BERT) for better semantic understanding.
+- **Deployment Pipeline**: Package the model into a web app or API for real-time review classification.
+- **Bias Mitigation**: Analyze model performance across subcategories (e.g., genres, release years) to ensure fairness.
+
+**Libraries**:
+```bash
+pip install pandas numpy matplotlib seaborn nltk spacy scikit-learn lightgbm
