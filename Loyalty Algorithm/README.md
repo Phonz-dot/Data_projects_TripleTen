@@ -1,42 +1,47 @@
-# Customer Churn Prediction for Interconnect Telecom
+# Interconnect Customer Churn Prediction
 
-## Overview  
-This project was developed for Interconnect Telecom to help them predict and reduce customer churn. Using a dataset combining contract details, internet services, personal information, and phone services, machine learning models were trained to identify customers at risk of leaving. The goal is to enable proactive retention strategies by flagging high-risk customers before they churn.
+## Overview
+This project analyzes customer data for Interconnect, a telecom provider, to predict client churn. The goal is to identify customers likely to cancel services so targeted retention strategies (e.g., promotional codes, special plans) can be deployed. The analysis combines contract, personal, internet, and phone service data, processed using Python with pandas and scikit-learn. A LightGBM classifier achieved 0.93 AUC-ROC and 0.86 accuracy in predicting churn.
 
-### Key Features  
-- **Data Integration**: Merged 4 separate datasets (contract, internet, personal, phone) into a unified dataset.  
-- **Feature Engineering**: Created new temporal features from contract dates and handled categorical variables.  
-- **Class Imbalance Handling**: Addressed skewed target distribution using upsampling techniques.  
-- **Model Comparison**: Evaluated 6 different classifiers to identify the best-performing model.  
+## Problem(s) to be addressed
+- **Churn Prediction**: Identify at-risk customers before they cancel services to enable proactive retention efforts.
+- **Data Integration**: Combine fragmented customer data from multiple sources (`contract.csv`, `personal.csv`, `internet.csv`, `phone.csv`) into a unified analysis.
+- **Model Performance**: Meet business metrics (AUC-ROC ≥ 0.75 for actionable predictions) while avoiding overfitting.
+- **Feature Engineering**: Improve relationship understanding between customer attributes and churn likelihood.
 
----
+## Key Features
+- **Data Integration**: Merges four datasets using `customerID` as a unique key.
+- **Feature Engineering**: Creates meaningful predictors from raw contract and service data.
+- **Model Training**: Evaluates multiple classifiers (including LightGBM, Random Forest) with hyperparameter tuning.
+- **Performance Metrics**: Focuses on AUC-ROC (primary) and accuracy (secondary) per business requirements.
+- **Interpretability**: Includes feature importance analysis to explain churn drivers.
 
-## Prerequisites  
-To run this project, you will need:  
-- Python 3.7 or higher  
-- Scikit-learn, XGBoost, LightGBM, CatBoost  
-- Pandas, NumPy, Matplotlib, Seaborn  
-- SHAP for model interpretation  
+## Prerequisites
+To run this project, you'll need:
+- **Python 3.7+**
+- **Jupyter Notebook**
 
----
+## Key Findings
+- **Top Performing Model**:
+   - LightGBM achieved 0.93 AUC-ROC and 0.86 accuracy after tuning.
+- **Critical Churn Indicators**:
+   - Contract type (monthly vs. long-term)
+   - Internet service type (fiber vs. DSL)
+   - Additional services usage (TechSupport, OnlineBackup)
+- **Validation Insight**:
+   - Consistent random state values across train/validation/test splits proved crucial to prevent overfitting.
 
-## Technologies  
-- **Machine Learning**: Scikit-learn, XGBoost, LightGBM, CatBoost  
-- **Model Optimization**: GridSearchCV and RandomizedSearchCV for hyperparameter tuning  
-- **Data Processing**: Pandas for data wrangling, StandardScaler for feature normalization  
-- **Visualization**: Seaborn for correlation heatmaps, Matplotlib for feature distributions  
+## Further Improvements
+- **Feature Engineering**:
+   - Implement PolynomialFeatures to explore nonlinear relationships between predictors.
+   - Create interaction terms between service types and contract durations.
+- **Model Deployment**:
+   - Build an API to score new customers in real-time using Flask/Django.
+- **Monitoring**:
+   - Add data drift detection to identify when model retraining is needed.
+- **Customer Segmentation**:
+   - Cluster churn-prone users to tailor retention offers (e.g., heavy streaming users vs. business clients).
 
----
-
-### Findings  
-- The LightGBM model performed best with 0.93 AUC-ROC and 0.86 accuracy.  
-- Key churn indicators included contract type (month-to-month highest risk), fiber optic internet users, and higher monthly charges.  
-- Total charges showed a significant negative correlation with contract start year.  
-- The original dataset had 27% churn rate, requiring upsampling for balanced training.  
-
----
-
-## Installation  
-1. Clone the repository:  
-   ```bash  
-   git clone https://github.com/your-repo/telecom-churn-prediction.git  
+**Libraries**:
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn lightgbm catboost xgboost
