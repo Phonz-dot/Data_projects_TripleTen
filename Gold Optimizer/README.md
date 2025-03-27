@@ -60,5 +60,7 @@ Where:
 - **F**: Gold share in feed pre-flotation.  
 - **T**: Gold share in tails.  
 
+![image](https://github.com/user-attachments/assets/89aea229-10a8-4a68-a6d3-0a2fa0ad5b9a)
+
 ---
 **Note**: Test set excludes target variables and calculation-based features (e.g., `rougher.calculation.au_pb_ratio`).  
