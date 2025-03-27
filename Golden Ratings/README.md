@@ -35,6 +35,9 @@ This project analyzes the relationship between IMDb ratings and vote counts for 
 - Investigate the anomalous score-4 results to identify potential data quality issues
 - Expand analysis to examine genre-specific patterns in ratings and votes
 
+![image](https://github.com/user-attachments/assets/7872d8c2-58ec-40aa-949f-c45f14c3abb5)
+
+
 **Python Libraries**:  
 ```bash
 pip install pandas numpy
