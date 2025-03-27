@@ -40,6 +40,8 @@ To run this project, you'll need:
   - **Deployment Pipeline**: Build a Flask/FastAPI endpoint to serve predictions with latency monitoring.
   - **Geospatial Analysis**: Incorporate postal code data (with proper anonymization) to account for regional price variations.
 
+![image](https://github.com/user-attachments/assets/ba71cfb8-cf6a-4402-9622-0ee5765c2832)
+
 - **Libraries**:
   ```bash
   pip install pandas numpy matplotlib seaborn scikit-learn xgboost lightgbm catboost
