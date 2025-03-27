@@ -53,6 +53,9 @@ To run this project, you'll need:
   - Build API for real-time churn prediction
   - Integrate with CRM for automated retention campaigns
   - Implement monitoring for model drift
+ 
+![image](https://github.com/user-attachments/assets/a6aaffb8-b5f4-415b-9f4d-94ef42c03f99)
+![image](https://github.com/user-attachments/assets/28ba3c2b-3561-425b-9b29-793a9ed60f40)
 
 - **Libraries**:  
   ```bash  
