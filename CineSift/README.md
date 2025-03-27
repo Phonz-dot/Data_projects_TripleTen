@@ -36,6 +36,9 @@ To run this project, you'll need:
 - **Deployment Pipeline**: Package the model into a web app or API for real-time review classification.
 - **Bias Mitigation**: Analyze model performance across subcategories (e.g., genres, release years) to ensure fairness.
 
+![image](https://github.com/user-attachments/assets/460229bb-fd41-4b1f-b292-82c266dd5c04)
+![image](https://github.com/user-attachments/assets/91e3e47e-0930-497f-90f3-9046962afd77)
+
 **Libraries**:
 ```bash
 pip install pandas numpy matplotlib seaborn nltk spacy scikit-learn lightgbm
