@@ -42,6 +42,8 @@ To run this project, you'll need:
 - **Model Tuning**: 
 - Experiment with different time horizons (30-min, 2-hour) to find optimal prediction windows.
 
+![image](https://github.com/user-attachments/assets/7870e4e8-5470-4018-aba4-d28a6811a6fa)
+
 - **Libraries**:
   ```bash
   pip install pandas numpy matplotlib seaborn lightgbm catboost xgboost scikit-learn statsmodels
