@@ -55,6 +55,8 @@ To run this project, you'll need:
 - **Risk Sensitivity Analysis**: 
   - Explore how changes in oil prices or development costs impact the risk of loss and profit margins.
 
+![image](https://github.com/user-attachments/assets/ee08f68e-ceca-4905-a2d0-84572063fc89)
+
 - **Libraries**:
   ```bash
   pip install pandas numpy matplotlib seaborn scikit-learn
