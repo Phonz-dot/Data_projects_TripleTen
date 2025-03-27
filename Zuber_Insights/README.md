@@ -34,6 +34,10 @@ To replicate this analysis, you’ll need:
 - **Driver Incentives**: Use neighborhood demand patterns to optimize driver placement and bonuses.
 - **Extended Weather Analysis**: Investigate other weather conditions (e.g., snow, fog) and their impact on ride frequency.
 
+![image](https://github.com/user-attachments/assets/60b6c928-a0cb-48d6-89a5-4e65ef455289)
+![image](https://github.com/user-attachments/assets/295930fa-8129-4306-b125-adcd2c0679bc)
+![image](https://github.com/user-attachments/assets/4432d144-e085-47f0-bc95-58bb0a53bd41)
+
 ## Python Libraries:
   ```bash
   pip install pandas numpy scipy plotly
