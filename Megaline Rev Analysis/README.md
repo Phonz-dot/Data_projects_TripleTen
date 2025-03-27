@@ -45,6 +45,8 @@ To run this project, you'll need:
 **Predictive Modeling**: 
 - Use historical data to predict future revenue trends or customer churn.
 
+![image](https://github.com/user-attachments/assets/d9154c1b-f443-4130-8571-e7de4b27e47a)
+
 **Libraries**:
   ```bash
   pip install pandas numpy matplotlib scipy
