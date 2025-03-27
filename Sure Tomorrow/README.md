@@ -50,6 +50,8 @@ To run this project, you'll need:
   - Implement a dynamic matrix generation system for enhanced data security.
 - **Feature Engineering**: 
   - Explore additional features (e.g., customer region, health history) to improve prediction accuracy.
+ 
+![image](https://github.com/user-attachments/assets/1b8b7e8c-670d-4627-8c91-9e9958da7e31)
 
 - **Libraries**:
   ```bash
