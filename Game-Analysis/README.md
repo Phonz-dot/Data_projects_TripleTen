@@ -57,6 +57,8 @@ To run this project, you'll need:
   - Implement time-series forecasting using ARIMA to predict 2017 sales based on historical trends.
 - **Review Sentiment**:
   - Add natural language processing of user reviews to supplement numerical scores for better prediction accuracy.
+ 
+![image](https://github.com/user-attachments/assets/0b633b04-7655-48b7-9518-9d514a43bca3)
 
 - **Libraries**:
   ```bash
