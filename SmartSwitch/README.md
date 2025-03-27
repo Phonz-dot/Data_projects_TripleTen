@@ -40,6 +40,8 @@ To run this project, you'll need:
 - **Scalability Testing**: 
   - Evaluate the model's performance on larger datasets or additional features (e.g., customer demographics).
 
+![image](https://github.com/user-attachments/assets/9b023228-1690-4e95-b81d-fb207de965c2)
+
 - **Libraries**:
   ```bash
   pip install pandas numpy scikit-learn plotly
