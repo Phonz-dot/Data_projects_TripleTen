@@ -39,6 +39,8 @@ To run this project, you'll need:
 - Customer Segmentation: Cluster users by purchase frequency or product preferences to tailor promotions.
 - Inventory Recommendations: Use reorder data to predict stock needs for high-demand products.
 
+  ![image](https://github.com/user-attachments/assets/d8f89212-cd8e-415d-99fe-0150376be292)
+
 ## Python Libraries:
   ```bash
   pip install pandas numpy matplotlib seaborn
