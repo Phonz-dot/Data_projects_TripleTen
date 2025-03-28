@@ -41,6 +41,9 @@ To run this project, you'll need:
    - Add data drift detection to identify when model retraining is needed.
 - **Customer Segmentation**:
    - Cluster churn-prone users to tailor retention offers (e.g., heavy streaming users vs. business clients).
+  
+![image](https://github.com/user-attachments/assets/4d3e33d4-63d4-44ba-ad0c-9175d18a769e)
+![image](https://github.com/user-attachments/assets/0e7ebd72-2d3d-4871-86cf-84851abbfb8d)
 
 **Libraries**:
 ```bash
