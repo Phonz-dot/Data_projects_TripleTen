@@ -40,6 +40,8 @@ To run this project, you'll need:
    - Adjust learning rate and simplify architecture for better convergence.
 - **Deployment Testing**:
    - Pilot in a controlled environment to evaluate real-world performance.
+ 
+![image](https://github.com/user-attachments/assets/ddbd206f-2a97-4c38-90a0-10fd867d7771)
 
 **Libraries**:
 ```bash
